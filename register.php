@@ -1,11 +1,11 @@
 <?php
   require("includes/conexion.php");
-  require("includes/encode.php");
+  require("includes/encoder.php");
     $name=$_POST['nom'];
     $lastn=$_POST['ape'];
     $usu=$_POST['usr'];
-    $pass=$_POST['pass'];
-    $rpass=$_POST['rpass'];
+    $pass=encryptAndEncode($_POST['pass']);
+    $rpass=encryptAndEncode($_POST['rpass']);
     $corr=$_POST['eml'];
     $tel= $_POST['fon'];
     $dire=$_POST['dirr'];
