@@ -38,11 +38,11 @@
       }
 
       footer {
-          background-color: #040739;
-          position: fixed;
-          width: 100%;
-          height: auto;
-          bottom: 0px;
+        background-color: #040739;
+        position: static;
+        width: 100%;
+        height: auto;
+        bottom: 0px;
       }
   </style>
 </head>
@@ -109,5 +109,16 @@
     </div>
   </div>
 </div>
+<footer class="container-fluid text-center">
+  <div class="tblanc">
+    <h4>Edutronika 2017</h4>
+      <p>Todos los derechos reservados.</p>
+    <form class="form-inline">
+     <p>Desarrollado por:
+       <br>
+       C&D Software</p>
+    </form>
+  </div>
+</footer>
   </body>
   </html>
