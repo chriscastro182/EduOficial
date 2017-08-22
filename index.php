@@ -311,11 +311,8 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
     <!-- /.container -->
 
     <div class="container">
-
         <hr>
-
         <!-- Footer -->
-
 				<div class="container-fluid text-center">
 					<div id="contenedor">
 						<h4>Edutronika 2017</h4><br>

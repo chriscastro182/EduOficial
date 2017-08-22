@@ -103,17 +103,23 @@
     </div>
   </div>
 </div>
-<div class="container-fluid text-center">
-  <div id="contenedor">
-    <h4>Edutronika 2017</h4><br>
-    <p>Todos los derechos reservados.</p>
-          <div style="clear: both"></div>
-      </div>
-      <div id="footer">
-        <p>Desarrollado por:
-          <br>
-          C&D Software</p>
+</div>
+<div class="container">
+    <hr>
+    <!-- Footer -->
+    <div class="container-fluid text-center">
+      <div id="contenedor">
+        <h4>Edutronika 2017</h4><br>
+        <p>Todos los derechos reservados.</p>
+              <div style="clear: both"></div>
+          </div>
+          <div id="footer">
+            <p>Desarrollado por:
+              <br>
+              C&D Software</p>
+        </div>
     </div>
+
 </div>
   </body>
   </html>
