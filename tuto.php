@@ -116,17 +116,19 @@
                 </aside>
             </section>
 
-    <footer class="container-fluid text-center">
-        <div class="tblanc">
-            <h4>Edutronika 2017</h4>
-            <p>Todos los derechos reservados.</p>
-            <form class="form-inline">
-              <p>Desarrollado por:
-                <br>
-                C&D Software</p>
-            </form>
-        </div>
-    </footer>
+          <div class="container-fluid text-center">
+            <div id="contenedor">
+        			<h4>Edutronika 2017</h4>
+        			<p>Todos los derechos reservados.</p>
+                    <div style="clear: both"></div>
+                </div>
+                <div id="footer">
+        					<p>Desarrollado por:
+        						<br>
+        						C&D Software</p>
+                </div>
+          </div>
+
 
     </body>
     </html>

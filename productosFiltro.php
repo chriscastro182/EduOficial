@@ -16,9 +16,8 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="C&D Software">
-
+		<link rel="icon" type="image/ico" href="Image\edut.ico"/>
     <title>Edutronika</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -46,14 +45,6 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
 
       .tblanc {
           color: #FFFFFF;
-      }
-
-      footer {
-          background-color: #040739;
-					position: static;
-          width: 100%;
-          height: auto;
-          bottom: 0px;
       }
   </style>
 
@@ -201,17 +192,18 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
 
         <!-- Footer -->
 
-        <footer class="container-fluid text-center">
-        <div class="tblanc">
-            <h4>Edutronika 2017</h4>
-            <p>Todos los derechos reservados.</p>
-            <form class="form-inline">
-              <p>Desarrollado por:
-                <br>
-                C&D Software</p>
-            </form>
-        </div>
-    </footer>
+				<div class="container-fluid text-center">
+					<div id="contenedor">
+						<h4>Edutronika 2017</h4><br>
+						<p>Todos los derechos reservados.</p>
+									<div style="clear: both"></div>
+							</div>
+							<div id="footer">
+								<p>Desarrollado por:
+									<br>
+									C&D Software</p>
+						</div>
+				</div>
 
   </div>
     <!-- /.container -->

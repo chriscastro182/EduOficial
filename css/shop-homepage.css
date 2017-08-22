@@ -49,6 +49,20 @@ body {
     color: #333;
 }
 
-footer {
-    margin: 50px 0;
+html, body {
+	height: 100%;
+}
+#contenedor {
+  background: #040739;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+  color: #FDFDFD;
+
+}
+#footer{
+	height: 60px;
+  background: #040739;
+  color: #FDFDFD;
 }

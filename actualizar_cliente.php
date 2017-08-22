@@ -131,17 +131,20 @@ $resultado = $mysqli->query($sql);
             </div>
         </div>
 
-        <footer class="container-fluid text-center">
-        <div class="tblanc">
-            <h4>Edutronika 2017</h4>
+        <div class="container-fluid text-center">
+          <div id="contenedor">
+            <h4>Edutronika 2017</h4><br>
             <p>Todos los derechos reservados.</p>
-            <form class="form-inline">
-              <p>Desarrollado por:
-                <br>
-                C&D Software</p>
-            </form>
+                  <div style="clear: both"></div>
+              </div>
+              <div id="footer">
+                <p>Desarrollado por:
+                  <br>
+                  C&D Software</p>
+            </div>
         </div>
-    </footer>
+
+
 </body>
 
 </html>
