@@ -12,12 +12,12 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 	$resultado3 = $mysqli->query($sql3);
 	$resultado4 = $mysqli->query($sql4);
 	$resultado5 = $mysqli->query($sql5);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
-	$row1 = $resultado1->fetch_array(MYSQLI_ASSOC);
-	$row2 = $resultado2->fetch_array(MYSQLI_ASSOC);
-	$row3 = $resultado3->fetch_array(MYSQLI_ASSOC);
-	$row4 = $resultado4->fetch_array(MYSQLI_ASSOC);
-	$row5 = $resultado5->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
+	$row1 = $resultado1->fetch_assoc();
+	$row2 = $resultado2->fetch_assoc();
+	$row3 = $resultado3->fetch_assoc();
+	$row4 = $resultado4->fetch_assoc();
+	$row5 = $resultado5->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -30,7 +30,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
     <meta name="author" content="">
     <link rel="icon" type="image/ico" href="Image\edut.ico"/>
     <title> Edutronika</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
@@ -177,16 +176,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 															</h4>
 															<p><?php echo $row['ipcion'];?> </p>
 													</div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -198,16 +187,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
                                 <h4><a href="#"><?php echo $row1['nomPro'];?></a>
                                 </h4>
                                 <p><?php echo $row1['ipcion'];?> </p>
-                            </div>
-                            <div class="ratings">
-                                <p class="pull-right">12 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -221,16 +200,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 															</h4>
 															<p><?php echo $row2['ipcion'];?> </p>
 													</div>
-                            <div class="ratings">
-                                <p class="pull-right">31 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -243,16 +212,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 															</h4>
 															<p><?php echo $row3['ipcion'];?> </p>
 													</div>
-                            <div class="ratings">
-                                <p class="pull-right">6 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -265,16 +224,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 															</h4>
 															<p><?php echo $row4['ipcion'];?> </p>
 													</div>
-                            <div class="ratings">
-                                <p class="pull-right">18 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
                         </div>
                     </div>
 
@@ -287,30 +236,15 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 															</h4>
 															<p><?php echo $row5['ipcion'];?> </p>
 													</div>
-                            <div class="ratings">
-                                <p class="pull-right">18 reviews</p>
-                                <p>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star"></span>
-                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                </p>
-                            </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
     <!-- /.container -->
 
-    <div class="container">
+    <div class="container-fluid">
         <hr>
         <!-- Footer -->
 				<div class="container-fluid text-center">

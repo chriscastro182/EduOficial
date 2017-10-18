@@ -4,14 +4,9 @@ require 'includes/conexion.php';
 session_start();
 if (@!$_SESSION['idUsuario']) {
 	header("Location:index.php");
-}elseif ($_SESSION['tipo_usr_idtipo_usr']==2) {
+}elseif ($_SESSION['tipo_usr_idtipo_usr']==1) {
 	header("Location:sesion.php");
 }
-
-
-$sql = "SELECT * FROM producto ORDER BY idP";
-  $resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,29 +26,26 @@ $sql = "SELECT * FROM producto ORDER BY idP";
     <script src="js/bootstrap.min.js"></script>
     <script src="peticionAdmin.js"></script>
     <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-
-      .jumbotron {
-          margin-bottom: 0;
-      }
-
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-
-      .tblanc {
-          color: #FFFFFF;
-      }
+		.navbar {
+				margin-bottom: 5px;
+				border-radius: 0;
+		}
+		.jumbotron {
+				margin-bottom: 0;
+		}
+		.center1 {
+				position: absolute;
+				left: 0;
+				top: 5%;
+				width: 100%;
+				text-align: center;
+				font-size: 16px;
+				z-index: 1;
+				color: #FFFFFF;
+		}
+		.tblanc {
+				color: #FFFFFF;
+		}
 
   </style>
 
@@ -85,13 +77,11 @@ $sql = "SELECT * FROM producto ORDER BY idP";
                         <?php
                         if(isset($_SESSION['idUsuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
-                                echo ' <li><a href="perfil.php">Perfil</a></li> ';
+                                echo ' <li><a href="sesion.php">Perfil</a></li> ';
                         }
                             else{
                                 echo ' <li><a href="ini.php"><span class="glyphicon glyphicon-user"></span> Mi Cuenta</a></li>';
                             }
-
-
                     ?>
                     </ul>
             </div>
@@ -101,45 +91,52 @@ $sql = "SELECT * FROM producto ORDER BY idP";
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-          
-        <section>
-            <div class="col-sm-10">
-			<input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar...">
-            </div>
-        </section>
 
-		<section id="tabla_resultado">
-		<!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
-		</section>
+		<?php
+		////Obteniendo registros de la base de datos a traves de una consulta SQ
+		$consulta = "SELECT nomPro, ipcion, cst, img FROM producto ORDER BY idP";
+		$resultado = $mysqli->query($consulta);
+		while($row=mysqli_fetch_array($resultado)){
+		echo "nombre: ".$row[0]."<br> ";
+		echo "Descripcion: ".$row[1]."<br>";
+		echo "costo: ".$row[2]."<br>";
+		echo "Imagen: ".$row[3]."<br><br>";
+		//echo "<img src='<?php echo $row['$img']";
+		}
+		?>
+
+		<?php
+								$id=$_GET['id'];
+								$sql = "SELECT * FROM nomPro, ipcion, cst, img WHERE idP='$id'";
+										$result = mysql_query($sql);
+										while ($registro = mysql_fetch_array($result)){ ?>
+
+										<div id="cuadro-productos">
+										<table>
+										<tr><td rowspan="3"><img src="productos/<?php echo $registro['imagen'];?>"></td>
+									 <td><p class="PortatilImagen"><?php echo $registro['nombre'];?></p></td></tr>
+											<tr><td><p class="descripcionPortatil"><?php echo $registro['descripcion'];?></p></td></tr>
+											<tr><td><p class="precioPortatil"> $ <?php echo $registro['precios'];?></p></td></tr>
+										</table>
+										</div>
+						<?php }?>
 
 
-                </div>
-						</div>
-
-
-          </div>
-
-    <!-- /.container -->
-
-<div class="container">
-        <hr>
-<!-- Footer -->
-<div class="container-fluid text-center">
-	<div id="contenedor">
-		<h4>Edutronika 2017</h4><br>
-		<p>Todos los derechos reservados.</p>
-					<div style="clear: both"></div>
-			</div>
-			<div id="footer">
-				<p>Desarrollado por:
-					<br>
-					C&D Software</p>
+<div class="container-fluid">
+		<hr>
+		<!-- Footer -->
+		<div class="container-fluid text-center">
+			<div id="contenedor">
+				<h4>Edutronika 2017</h4><br>
+				<p>Todos los derechos reservados.</p>
+							<div style="clear: both"></div>
+					</div>
+					<div id="footer">
+						<p>Desarrollado por:
+							<br>
+							C&D Software</p>
+				</div>
 		</div>
-</div>
-</div>
-    <!-- /.container -->
 </body>
-
+    <!-- /.container -->
 </html>

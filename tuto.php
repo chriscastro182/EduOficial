@@ -13,39 +13,7 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
 
-      .jumbotron {
-          margin-bottom: 0;
-      }
-
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-
-      .tblanc {
-          color: #FFFFFF;
-      }
-
-      footer {
-        background-color: #040739;
-        position: static;
-        width: 100%;
-        height: auto;
-        bottom: 0px;
-      }
-  </style>
 </head>
 
 <body>
@@ -67,20 +35,21 @@
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-               <!-- <ul class="nav navbar-nav navbar-right">
-                    <?php
-                  //  if(session_start());{
-                   /*     if(isset($_SESSION['u_usuario'])){
+                <ul class="nav navbar-nav navbar-right">
+                     <?php
+                    if(session_start());{
+                        if(isset($_SESSION['u_usuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
-                                echo ' <li><a href="sesion.php">Perfil</a></li> ';
+                                echo ' <li><a href="perfil.php">Perfil</a></li> ';
                         }
                             else{
-                                echo ' <li><a href="ini.php"><span class="glyphicon glyphicon-user"></span> Mi Cuenta</a></li>';
+                                echo ' <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>';
+                                echo ' <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>';
                             }
-                    } */
+                    }
+
                     ?>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-                </ul> -->
+                    </ul>
             </div>
         </div>
     </nav>
@@ -116,7 +85,7 @@
                 </aside>
             </section>
 
-            <div class="container">
+          <div class="container-fluid">
                 <hr>
                 <!-- Footer -->
         				<div class="container-fluid text-center">
@@ -131,7 +100,6 @@
         									C&D Software</p>
         						</div>
         				</div>
-
           </div>
     </body>
     </html>

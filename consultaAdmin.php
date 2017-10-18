@@ -12,7 +12,7 @@ $query="SELECT * FROM producto ORDER BY idP";
 if(isset($_POST['producto']))
 {
 	$q=$mysqli->real_escape_string($_POST['producto']);
-	$query="SELECT * FROM producto WHERE 
+	$query="SELECT * FROM producto WHERE
 		idP LIKE '%".$q."%' OR
 		nomPro LIKE '%".$q."%' OR
 		cst LIKE '%".$q."%' OR
@@ -25,7 +25,7 @@ if(isset($_POST['producto']))
 // $buscarProductos=$conexion->query($query); //
 if ($buscarProducto->num_rows > 0)
 {
-	$tabla.= 
+	$tabla.=
 	'<container>';
 
 	while($filaProducto= $buscarProducto->fetch_assoc())
@@ -35,7 +35,7 @@ if ($buscarProducto->num_rows > 0)
 		<div class="col-sm-3 col-lg-3 col-md-3">
                 <div class="thumbnail">
                     <img src="'.$filaProducto['img'].'" alt="">
-                    <a href="#ventana1" class="btn btn-info btn-sm" data-toggle="modal">Ampliar</a>
+										
                     <div class="modal fade" id="ventana1">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -47,7 +47,7 @@ if ($buscarProducto->num_rows > 0)
                                 <!-- Contenido de la ventana -->
                                 <div class="modal-body">
                                     <p>
-									'.$filaProducto['ipcion'].'                                        
+									'.$filaProducto['ipcion'].'
                                     </p>
                                     <img src="'.$filaProducto['img'].'" alt="">
                                 </div>
@@ -61,19 +61,11 @@ if ($buscarProducto->num_rows > 0)
 				<div class="caption">
                     <!--    <h4 class="pull-right">$ '.$filaProducto['cst'].'</h4> -->
                         <h4><a href="#">'.$filaProducto['nomPro'].'</a>
-                          <p><a href="modificar_producto.php?id='.$filaProducto['idP'].'"><span class="glyphicon glyphicon-pencil"></span></a></p>
+                          <p><a href="modificar_producto.php?id='.$filaProducto['idP'].'"><span class="glyphicon glyphicon-pencil">
+													<a href="eliminar_producto.php?id='.$filaProducto['idP'].'"><span class="glyphicon glyphicon-remove"></span></a></p>
+
                         </h4>
                         <p>'.$filaProducto['ipcion'].' </p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">12 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
                     </div>
                 </div>
 			</div>

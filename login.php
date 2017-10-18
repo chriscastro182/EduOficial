@@ -18,31 +18,7 @@ require 'includes/conexion.php';
         <link href="css/loginFrontend.css" rel="stylesheet">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <style>
-            .navbar {
-                margin-bottom: 5px;
-                border-radius: 0;
-            }
 
-            .jumbotron {
-                margin-bottom: 0;
-            }
-
-            .center1 {
-                position: absolute;
-                left: 0;
-                top: 5%;
-                width: 100%;
-                text-align: center;
-                font-size: 16px;
-                z-index: 1;
-                color: #FFFFFF;
-            }
-
-            .tblanc {
-                color: #FFFFFF;
-            }
-        </style>
     </head>
 
     <body>
@@ -67,7 +43,6 @@ require 'includes/conexion.php';
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -85,21 +60,24 @@ require 'includes/conexion.php';
 
         <!-- Footer -->
 
-        <div class="container-fluid text-center">
-          <div id="contenedor">
-            <h4>Edutronika 2017</h4><br>
-            <p>Todos los derechos reservados.</p>
-                  <div style="clear: both"></div>
-              </div>
-              <div id="footer">
-                <p>Desarrollado por:
-                  <br>
-                  C&D Software</p>
+        <div class="container-fluid">
+            <br><br><br><br>
+            <!-- Footer -->
+            <div class="container-fluid text-center">
+              <div id="contenedor">
+                <h4>Edutronika 2017</h4><br>
+                <p>Todos los derechos reservados.</p>
+                      <div style="clear: both"></div>
+                  </div>
+                  <div id="footer">
+                    <p>Desarrollado por:
+                      <br>
+                      C&D Software</p>
+                </div>
             </div>
-        </div>
 
-        </div>
-        <!-- /.container -->
+      </div>
+
     </body>
 
     </html>

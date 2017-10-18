@@ -4,7 +4,7 @@ $id = $_GET['id'];
 
 $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
 	$resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -74,124 +74,90 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-              <!--  <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mi Cuenta</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-                </ul>
-							-->
+								<ul class="nav navbar-nav navbar-right">
+								<?php
+ 							if(session_start());{
+ 									if(isset($_SESSION['u_usuario'])){
+ 													echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
+ 													echo ' <li><a href="perfil.php">Perfil</a></li> ';
+ 									}
+ 											else{
+ 													echo ' <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>';
+ 													echo ' <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>';
+ 											}
+ 							}
+
+ 							?>
+						</ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-          <div class="col-md-2">
-            <p class="lead">Es ingeniería al límite</p>
-						<span class="hidden-lg"></span>
-						<nav class="navbar navbar-default" role="navigation">
 
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-                    <span class="sr-only">Categorías</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="collapse navbar-collapse" id="example-navbar-collapse">
-                  <?php
-                  $sqlTip = "SELECT * FROM tipo_producto";
-                    $resul = $mysqli->query($sqlTip);
-                    while($rows = $resul->fetch_array(MYSQLI_ASSOC)){
-											$activo = "";
-											if($rows['idTipo_Producto']== $id)
-											{
-												$activo="class=\"active\"";
-											}
-                    ?>
-                    <ul  class="nav nav-pills nav-stacked" style="text-align: center;">
+		<div class="container">
+				<div class="page-header">
+					<h1>Edutronika <small class="tittles-pages-logo">Es ingeniería al límite</small></h1>
+				</div>
+				<br><br>
+				<div class="row">
+						<div class="col-xs-12">
+								<ul id="store-links" class="nav nav-tabs" role="tablist">
+									<li role="presentation"><a href="productos.php" >Todos los productos</a></li>
+									<li role="presentation" class="dropdown active">
+										<a href="#categorias" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">Categorías <span class="caret"></span></a>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+											<!-- ==================== Lista categorias =============== -->
+											<?php
+		                  $sqlTip = "SELECT * FROM tipo_producto";
+		                    $resul = $mysqli->query($sqlTip);
+		                    while($rows = $resul->fetch_assoc()){
+													$activo = "";
+													if($rows['idTipo_Producto']== $id)
+													{
+														$activo="class=\"active\"";
+													}
+		                    ?>
+		                    <ul  class="nav nav-pills nav-stacked" style="text-align: center;">
 
-                      <li <?php echo $activo ?>><a href="productosFiltro.php?id=<?php echo $rows['idTipo_Producto']; ?>">
-      									<!-- <span class="badge pull-right">42</span> -->
-      									<?php echo $rows['nomTip']; ?></a>
-      								</li>
-      							</ul>
-                  <?php } ?>
-          	</div>
-          </nav>
-          </div>
-					<?php
-					while($row = $resultado->fetch_array(MYSQLI_ASSOC)){
-						?>
-            <div class="col-sm-3 col-lg-3 col-md-3">
-                <div class="thumbnail">
-                    <img src="<?php echo $row['img'];?>" alt="">
-										<?php $id=$row['idP']; ?>
+		                      <li <?php echo $activo ?>><a href="productosFiltro.php?id=<?php echo $rows['idTipo_Producto']; ?>">
+		      									<!-- <span class="badge pull-right">42</span> -->
+		      									<?php echo $rows['nomTip']; ?></a>
+		      								</li>
+		      							</ul>
+		                  <?php } ?>
 
-										<a href="#<?php echo $id; ?>" class="btn btn-info btn-sm" data-toggle="modal">Ampliar</a>
-        <div class="modal fade" id="<?php echo $id; ?>">
-            <div class="modal-dialog">
+											<!-- ==================== Fin lista categorias =============== -->
+										</ul>
+									</li>
+								</div>
+							</div>
 							<?php
-							$sql1 = "SELECT * FROM producto WHERE idP = '$id'";
-								$resultadoPOP = $mysqli->query($sql1);
-								$rowP = $resultadoPOP->fetch_array(MYSQLI_ASSOC);
+							foreach ($resultado as $row){
+
+							//while($row = $resultado->fetch_assoc()){
 								?>
-                <div class="modal-content">
-                    <!-- Encabezado de la ventana -->
-                    <div class="modal-header">
-                        <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h3 class="modal-tittle">
-                            <?php echo $rowP['nomPro'];?>
-                        </h3>
-                    </div>
-                    <!-- Contenido de la ventana -->
-                    <div class="modal-body">
-                        <p>
-                          <h4>  <?php echo $rowP['ipcion'];?>
-													</h4>
-                        </p>
-                        <img src="<?php echo $rowP['img'];?>" alt="">
-                    </div>
-                    <!-- Pie de pagina de la ventana -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+		            <div class="col-sm-3 col-lg-3 col-md-3">
+		                <div class="thumbnail">
+		                    <img src="<?php echo $row['img'];?>" alt="">
+												<?php $id=$row['idP']; ?>
+		        <div class="" id="<?php echo $id; ?>">
+		        </div>
+		                    <div class="caption">
+		                       <h4 class="pull-right">$<?php echo $row['cst'];?></h4>
+		                        <h4><a href="#"><?php echo $row['nomPro'];?></a>
+														</h4>
+		                        <p><?php echo $row['ipcion'];?> </p>
+		                    </div>
 
-                    <div class="caption">
-                      <!--  <h4 class="pull-right">$<?php echo $row['cst'];?></h4> -->
-                        <h4><a href="#"><?php echo $row['nomPro'];?></a>
-												</h4>
-                        <p><?php echo $row['ipcion'];?> </p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">12 reviews</p>
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                        </p>
-                    </div>
-                </div>
-						</div>
-						<?php } ?>
-          </div>
-        </div>
+		                </div>
+								</div>
+								<?php } ?>
+		          </div>
     <!-- /.container -->
-
     <div class="container">
-
         <hr>
-
         <!-- Footer -->
-
 				<div class="container-fluid text-center">
 					<div id="contenedor">
 						<h4>Edutronika 2017</h4><br>

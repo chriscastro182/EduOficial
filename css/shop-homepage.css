@@ -66,3 +66,10 @@ html, body {
   background: #040739;
   color: #FDFDFD;
 }
+
+.transparente{
+opacity: 0.8;
+-moz-opacity: 0.8;
+filter: alpha(opacity=50);
+-khtml-opacity: 0.8;
+}

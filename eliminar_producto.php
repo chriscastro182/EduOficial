@@ -33,25 +33,25 @@ $id = $_GET['id'];
     <body>
         <div class="container">
             <div class="row">
-                <h3 style="text-align:center">MODIFICAR ARTÍCULO</h3>
+                <h3 style="text-align:center">ELIMINAR ARTÍCULO</h3>
             </div>
             <div class="thumbnail" class="col-sm-10">
                 <img src="<?php echo $row['img'];?>" alt="" class="img-rounded">
             </div>
              </form>
-            <form class="form-horizontal" method="POST" action="actualizar.php" enctype="multipart/form-data" autocomplete="off">
+            <form class="form-horizontal" method="POST" action="eliminar.php" enctype="multipart/form-data" autocomplete="off">
 
                 <div class="form-group">
                     <label for="nomPro" class="col-sm-2 control-label">Nombre del artículo: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nomPro" name="nomPro" placeholder="Nombre o modelo" value="<?php echo $row['nomPro'];?>" required>
+                        <input type="text" class="form-control" id="nomPro" name="nomPro" placeholder="Nombre o modelo" value="<?php echo $row['nomPro'];?>" disabled>
                     </div>
                 </div>
 
 								<div class="form-group">
-									<label for="img" class="col-sm-2 control-label">Subir archivo</label>
+
 									<div class="col-sm-10">
-                	<input type="file" id="img" name="img" placeholder="img" value="<?php echo $row['img'];?>" />
+                	<input type="hidden" id="img" name="img" placeholder="img" value="<?php echo $row['img'];?>" />
                 <input type="hidden" id="id" name="id" placeholder="id" value="<?php echo $row['idP']; ?>" />
 							</div>
 						</div>
@@ -59,21 +59,21 @@ $id = $_GET['id'];
                 <div class="form-group">
                     <label for="cst" class="col-sm-2 control-label">Costo: </label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cst" name="cst" placeholder="Costo en pesos" value="<?php echo $row['cst'];?>" required>
+                        <input type="text" class="form-control" id="cst" name="cst" placeholder="Costo en pesos" value="<?php echo $row['cst'];?>" disabled>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="ipcion" class="col-sm-2 control-label">Descripción: </label>
                     <div class="col-sm-10">
-                        <input class="form-control" rows="5" id="ipcion" name="ipcion" placeholder="Descripción" value="<?php echo $row['ipcion'];?>" required></input>
+                        <input class="form-control" rows="5" id="ipcion" name="ipcion" placeholder="Descripción" value="<?php echo $row['ipcion'];?>" disabled></input>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="stock" class="col-sm-2 control-label">Cantidad: </label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="stock" name="stock" placeholder="Cantidad" value="<?php echo $row['stock'];?>" required>
+                        <input type="number" class="form-control" id="stock" name="stock" placeholder="Cantidad" value="<?php echo $row['stock'];?>" disabled>
                     </div>
                 </div>
                 <?php
@@ -86,8 +86,8 @@ $id = $_GET['id'];
                     ?>
                     <div class="form-group">
                         <label for="stock" class="col-sm-2 control-label">Categorías: </label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="tipoProducto" name="tipoProducto">
+                        <div class="col-sm-10" disa>
+                            <select class="form-control" id="tipoProducto" name="tipoProducto" disabled>
                          <option value="<?php echo $tipo['idTipo_Producto'];?>"> <?php echo $tipo['nomTip'];?> </option>
                           <?php while($rows=$resul->fetch_assoc()){ ?>
                           <option value="<?php echo $rows['idTipo_Producto']; ?>"> <?php echo $rows['nomTip']; ?></option>
@@ -100,8 +100,8 @@ $id = $_GET['id'];
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <a href="index.php" class="btn btn-default">Regresar</a>
-                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                            <a href="AdminProductos.php" class="btn btn-default">Regresar</a>
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
                         </div>
                     </div>
             </form>

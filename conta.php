@@ -73,7 +73,6 @@
                                 <li><a href="conta.php">Contacto</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                              <li><a href="#"><span class="glyphicon glyphicon-search"></span></a><li>
                      <?php
 
                     if(session_start());{

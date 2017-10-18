@@ -10,11 +10,7 @@
     $tel= $_POST['fon'];
     $dire=$_POST['dirr'];
     $resultado=0;
-
-
-
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-
 ?>
     <html>
     <!--<![endif]-->

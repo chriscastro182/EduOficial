@@ -74,6 +74,7 @@ $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
 
                         if(isset($_SESSION['u_usuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
+                                echo ' <li><a href="perfil.php">Perfil</a></li> ';
                         }
                             else{
                                 header("Location: index.php");

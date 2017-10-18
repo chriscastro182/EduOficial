@@ -14,31 +14,7 @@
     <link href="css/loginFrontend.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <style>
-        .navbar {
-            margin-bottom: 5px;
-            border-radius: 0;
-        }
-
-        .jumbotron {
-            margin-bottom: 0;
-        }
-
-        .center1 {
-            position: absolute;
-            left: 0;
-            top: 5%;
-            width: 100%;
-            text-align: center;
-            font-size: 16px;
-            z-index: 1;
-            color: #FFFFFF;
-        }
-
-        .tblanc {
-            color: #FFFFFF;
-        }
-    </style>
+  
 </head>
 
 <body>
@@ -68,11 +44,10 @@
                                 echo ' <li><a href="sesion.php">Perfil</a></li> ';
                         }
                             else{
-                                echo ' <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Mi Cuenta</a></li>';
+                                echo ' <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Mi Perfil</a></li>';
                             }
                     }
                     ?>
-                        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
                 </ul>
             </div>
         </div>
