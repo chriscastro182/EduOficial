@@ -28,33 +28,18 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/ico" href="Image\edut.ico"/>
+    <link rel="icon" type="image/ico" href="Image/edut.ico"/>
     <title> Edutronika</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-      .jumbotron {
-          margin-bottom: 0;
-      }
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-      .tblanc {
-          color: #FFFFFF;
-      }
+		#footer{
+			height: 60px;
+			background: #040739;
+			color: #FDFDFD;
+		}
 
   </style>
 </head>
@@ -81,7 +66,7 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+            <!--    <ul class="nav navbar-nav navbar-right">
                     <?php
 
                     if(session_start());{
@@ -96,13 +81,7 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
                     }
 
                     ?>
-                          <!--<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>-->
-                    </ul>
-								<!--  <ul class="nav navbar-nav navbar-right">
-	                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mi Cuenta</a></li>
-	                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrito</a></li>
-	                </ul>
-								-->
+									</ul> -->
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -248,7 +227,7 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
         <hr>
         <!-- Footer -->
 				<div class="container-fluid text-center">
-					<div id="contenedor">
+					<div id="footer">
 						<h4>Edutronika 2017</h4><br>
 						<p>Todos los derechos reservados.</p>
 									<div style="clear: both"></div>
@@ -259,7 +238,6 @@ $sql5 = "SELECT * FROM producto WHERE idP = 66";
 									C&D Software</p>
 						</div>
 				</div>
-
   </div>
     <!-- /.container -->
 </body>

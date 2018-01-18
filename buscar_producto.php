@@ -6,7 +6,7 @@ require 'includes/conexion.php';
 
 $sql = "SELECT * FROM producto ORDER BY idP";
   $resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -114,7 +114,7 @@ $sql = "SELECT * FROM producto ORDER BY idP";
                   <?php
                   $sqlTip = "SELECT * FROM tipo_producto";
                     $resul = $mysqli->query($sqlTip);
-                    while($rows = $resul->fetch_array(MYSQLI_ASSOC)){
+                    while($rows = $resul->fetch_assoc()){
                     ?>
                     <ul  class="nav nav-pills nav-stacked" style="text-align: center;">
 

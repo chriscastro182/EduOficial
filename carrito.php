@@ -3,14 +3,12 @@ require 'includes/conexion.php';
 session_start();
 if (@!$_SESSION['idUsuario']) {
 	header("Location:index.php");
-}elseif ($_SESSION['tipo_usr_idtipo_usr']==2) {
+}elseif ($_SESSION['tipo_usr_idtipo_usr']==1) {
 	header("Location:sesion.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,19 +16,44 @@ if (@!$_SESSION['idUsuario']) {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/ico" href="Image\edut.ico"/>
-    <title> Edutronika</title>
+    <title>Edutronika</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-		#footer{
-			height: 60px;
-			background: #040739;
-			color: #FDFDFD;
-		}
-  </style>
+      .navbar {
+          margin-bottom: 5px;
+          border-radius: 0;
+      }
 
+      .jumbotron {
+          margin-bottom: 0;
+      }
+
+      .center1 {
+          position: absolute;
+          left: 0;
+          top: 5%;
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          z-index: 1;
+          color: #FFFFFF;
+      }
+
+      .tblanc {
+          color: #FFFFFF;
+      }
+
+      footer {
+          background-color: #040739;
+          position: fixed;
+          width: 100%;
+          height: auto;
+          bottom: 0px;
+      }
+  </style>
 
 </head>
 
@@ -66,51 +89,28 @@ if (@!$_SESSION['idUsuario']) {
                                 header("Location: index.php");
                             }
                     ?>
+                    <li><a href="sesion.php"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-          </div>
-        </nav>
+        </div>
         <!-- /.container -->
+    </nav>
+      aqui va a ir el carrito
 
-        <div class="container">
-        <?php
-        if($_SESSION['tipo_usr_idtipo_usr']==1){
-                        echo '<H1> Hola ';
-                        echo $_SESSION['nomUsr'];
-                        echo ', Bienvenido</H1>';
-                        echo "<br><a href=\"AdminProductos.php\" class=\"btn btn-danger\">Modificar y Eliminar productos</a>";
-                        echo "<br><br><a href=\"modificar_perfil.php\" class=\"btn btn-default\">Modificar Perfil</a>";
-                        echo "<br><br><a href=\"subir.php\" class=\"btn btn-success\">Agregar Nuevo Producto</a>";
+    <div class="container-fluid">
+        <hr>
+        <footer class="container-fluid text-center">
+        <div class="tblanc">
+            <h4>Edutronika 2017</h4>
+            <p>Todos los derechos reservados.</p>
+            <!-- <form class="form-inline"> -->
+              <p>Desarrollado por:
+                <br>
+                C&D Software</p>
+            <!-- </form> -->
 
-                }
-                    else{
-                        echo '<H1> Hola Bienvenido ';
-                        echo $_SESSION['nomUsr'];
-                        echo ', Bienvenido.</H1>';
-                        echo "<br><a href=\"modificar_perfil.php\" class=\"btn btn-primary\">Modificar Perfil</a>";
-                    }
-                ?>
-
-        </div>
-
-        <div class="container">
-              <hr>
-              <!-- Footer -->
-              <div class="container-fluid text-center">
-                <div id="contenedor">
-                  <h4>Edutronika 2017</h4><br>
-                  <p>Todos los derechos reservados.</p>
-                        <div style="clear: both"></div>
-                    </div>
-                    <div id="footer">
-                      <p>Desarrollado por:
-                        <br>
-                        C&D Software</p>
-                  </div>
-              </div>
-        </div>
-
-
+        </footer>
+    </div>
     </body>
 </html>

@@ -11,7 +11,7 @@ $id = $_GET['id'];
 	$sql = "SELECT * FROM producto WHERE idP = '$id'";
 
 	$resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
   $idTipP = $row['Tipo_Producto_idTipo_Producto'];
 ?>
     <html>
@@ -39,12 +39,19 @@ $id = $_GET['id'];
                 <img src="<?php echo $row['img'];?>" alt="" class="img-rounded">
             </div>
              </form>
-            <form class="form-horizontal" method="POST" action="eliminar.php" enctype="multipart/form-data" autocomplete="off">
+            <form class="form-group" method="POST" action="eliminar.php" enctype="multipart/form-data" autocomplete="off">
+							<div class="form-center">
+									<div class="col-sm-10">
+											<label class="col-sm-12 control-label">¿Esta seguro de querer eliminar este producto? </label>
+									</div>
+							</div>
+
+
 
                 <div class="form-group">
-                    <label for="nomPro" class="col-sm-2 control-label">Nombre del artículo: </label>
+
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nomPro" name="nomPro" placeholder="Nombre o modelo" value="<?php echo $row['nomPro'];?>" disabled>
+                        <input type="hidden" class="form-control" id="nomPro" name="nomPro" placeholder="Nombre o modelo" value="<?php echo $row['nomPro'];?>" disabled>
                     </div>
                 </div>
 
@@ -57,23 +64,23 @@ $id = $_GET['id'];
 						</div>
 
                 <div class="form-group">
-                    <label for="cst" class="col-sm-2 control-label">Costo: </label>
+
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cst" name="cst" placeholder="Costo en pesos" value="<?php echo $row['cst'];?>" disabled>
+                        <input type="hidden" class="form-control" id="cst" name="cst" placeholder="Costo en pesos" value="<?php echo $row['cst'];?>" disabled>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="ipcion" class="col-sm-2 control-label">Descripción: </label>
+
                     <div class="col-sm-10">
-                        <input class="form-control" rows="5" id="ipcion" name="ipcion" placeholder="Descripción" value="<?php echo $row['ipcion'];?>" disabled></input>
+                        <input class="hidden" rows="5" id="ipcion" name="ipcion" placeholder="Descripción" value="<?php echo $row['ipcion'];?>" disabled></input>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="stock" class="col-sm-2 control-label">Cantidad: </label>
+
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="stock" name="stock" placeholder="Cantidad" value="<?php echo $row['stock'];?>" disabled>
+                        <input type="hidden" class="form-control" id="stock" name="stock" placeholder="Cantidad" value="<?php echo $row['stock'];?>" disabled>
                     </div>
                 </div>
                 <?php
@@ -85,9 +92,9 @@ $id = $_GET['id'];
 
                     ?>
                     <div class="form-group">
-                        <label for="stock" class="col-sm-2 control-label">Categorías: </label>
+
                         <div class="col-sm-10" disa>
-                            <select class="form-control" id="tipoProducto" name="tipoProducto" disabled>
+                            <select class="hidden" id="tipoProducto" name="tipoProducto" disabled>
                          <option value="<?php echo $tipo['idTipo_Producto'];?>"> <?php echo $tipo['nomTip'];?> </option>
                           <?php while($rows=$resul->fetch_assoc()){ ?>
                           <option value="<?php echo $rows['idTipo_Producto']; ?>"> <?php echo $rows['nomTip']; ?></option>
@@ -102,6 +109,7 @@ $id = $_GET['id'];
                         <div class="col-sm-offset-2 col-sm-10">
                             <a href="AdminProductos.php" class="btn btn-default">Regresar</a>
                             <button type="submit" class="btn btn-danger">Eliminar</button>
+														<br><br>
                         </div>
                     </div>
             </form>

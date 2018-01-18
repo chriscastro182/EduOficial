@@ -23,29 +23,11 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-
-      .jumbotron {
-          margin-bottom: 0;
-      }
-
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-
-      .tblanc {
-          color: #FFFFFF;
-      }
+		#footer{
+			height: 60px;
+			background: #040739;
+			color: #FDFDFD;
+		}
   </style>
 
 
@@ -74,7 +56,7 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-								<ul class="nav navbar-nav navbar-right">
+								<!--<ul class="nav navbar-nav navbar-right">
 								<?php
  							if(session_start());{
  									if(isset($_SESSION['u_usuario'])){
@@ -88,7 +70,7 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
  							}
 
  							?>
-						</ul>
+						</ul>-->
             </div>
         </div>
     </nav>
@@ -144,7 +126,7 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
 		        <div class="" id="<?php echo $id; ?>">
 		        </div>
 		                    <div class="caption">
-		                       <h4 class="pull-right">$<?php echo $row['cst'];?></h4>
+		                      
 		                        <h4><a href="#"><?php echo $row['nomPro'];?></a>
 														</h4>
 		                        <p><?php echo $row['ipcion'];?> </p>
@@ -159,7 +141,7 @@ $sql = "SELECT * FROM producto WHERE Tipo_Producto_idTipo_Producto = '$id'";
         <hr>
         <!-- Footer -->
 				<div class="container-fluid text-center">
-					<div id="contenedor">
+					<div id="footer">
 						<h4>Edutronika 2017</h4><br>
 						<p>Todos los derechos reservados.</p>
 									<div style="clear: both"></div>

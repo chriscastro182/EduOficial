@@ -57,7 +57,7 @@
                     <div class="row">
                         <div class="row" style="text-align:center">
                             <?php if($resultado) { ?>
-                            <h3>REGISTRO MODIFICADO</h3>
+                            <h3>Usuario Registrado</h3>
                             <div class="alert alert-success">Usuario registrado con éxito.</div>
                             <?php
                             echo "<script>location.href='index.php'</script>";

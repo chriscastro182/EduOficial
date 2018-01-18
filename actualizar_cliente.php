@@ -1,5 +1,6 @@
 <?php
     require 'includes/conexion.php';
+    require 'includes/encoder.php';
     $idUsuario = $_POST['idUsuario'];
     $nomUsr = $_POST['nomUsr'];
     $apellidosUsr = $_POST['apellidosUsr'];
@@ -12,56 +13,29 @@ $sql = "UPDATE usuario SET nomUsr='$nomUsr',apellidosUsr='$apellidosUsr',sru='$s
 ,tl='$tl',ccion='$ccion' WHERE idUsuario = '$idUsuario'";
 //echo"Query modificación".$idUsuario;
 $resultado = $mysqli->query($sql);
-
-
-
 ?>
 <html>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/ico" href="Image\edut.ico" />
+    <link rel="icon" type="image/ico" href="Image/edut.ico" />
     <title>Edutronika</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-      .jumbotron {
-          margin-bottom: 0;
-      }
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-      .tblanc {
-          color: #FFFFFF;
-      }
-      footer {
-          background-color: #040739;
-          position: fixed;
-          width: 100%;
-          height: auto;
-          bottom: 0px;
-      }
+		#footer{
+			height: 60px;
+			background: #040739;
+			color: #FDFDFD;
+		}
+
   </style>
 </head>
 
@@ -89,7 +63,6 @@ $resultado = $mysqli->query($sql);
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php
-
                     if(session_start());{
                         if(isset($_SESSION['u_usuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
@@ -114,7 +87,6 @@ $resultado = $mysqli->query($sql);
         </div>
         <!-- /.container -->
     </nav>
-
 <body>
 <div class="container">
             <div class="row">
@@ -124,27 +96,25 @@ $resultado = $mysqli->query($sql);
                         <?php } else { ?>
                         <h3>ERROR AL MODIFICAR</h3>
                     <?php } ?>
-
                     <a href="perfil.php" class="btn btn-primary">Regresar</a>
-
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid text-center">
-          <div id="contenedor">
-            <h4>Edutronika 2017</h4><br>
-            <p>Todos los derechos reservados.</p>
-                  <div style="clear: both"></div>
-              </div>
-              <div id="footer">
-                <p>Desarrollado por:
-                  <br>
-                  C&D Software</p>
-            </div>
-        </div>
-
-
+        <div class="container-fluid">
+            <hr>
+            <!-- Footer -->
+    				<div class="container-fluid text-center">
+    					<div id="footer">
+    						<h4>Edutronika 2017</h4><br>
+    						<p>Todos los derechos reservados.</p>
+    									<div style="clear: both"></div>
+    							</div>
+    							<div id="footer">
+    								<p>Desarrollado por:
+    									<br>
+    									C&D Software</p>
+    						</div>
+    				</div>
+      </div>
 </body>
-
 </html>

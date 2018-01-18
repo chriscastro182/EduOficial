@@ -20,9 +20,13 @@ $sql = "SELECT * FROM producto ORDER BY idP";
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-
-
+    <style>
+		#footer{
+			height: 60px;
+			background: #040739;
+			color: #FDFDFD;
+		}
+  </style>
 </head>
 
 <body>
@@ -48,7 +52,7 @@ $sql = "SELECT * FROM producto ORDER BY idP";
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+              <!--  <ul class="nav navbar-nav navbar-right">
                      <?php
                     if(session_start());{
                         if(isset($_SESSION['u_usuario'])){
@@ -62,7 +66,7 @@ $sql = "SELECT * FROM producto ORDER BY idP";
                     }
 
                     ?>
-                    </ul>
+                  </ul>-->
             </div>
 
         </div>
@@ -80,12 +84,13 @@ $sql = "SELECT * FROM producto ORDER BY idP";
             <div class="row">
                 <div class="col-xs-12">
                     <ul id="store-links" class="nav nav-tabs" role="tablist">
-                      <li role="presentation"><a href="#all-product" role="tab" data-toggle="tab" aria-controls="all-product" aria-expanded="false">Todos los productos</a></li>
+                      <li role="presentation"><a href="productos.php" role="tab" data-toggle="tab" aria-controls="all-product" aria-expanded="false">Todos los productos</a></li>
                       <li role="presentation" class="dropdown active">
                         <a href="#categorias" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents" aria-expanded="false">Categorías <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
                           <!-- ==================== Lista categorias =============== -->
-                          <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                          <div class="collapse navbar-collapse" id="example-navbar-collapse" <div class="col-xs-4">
+                            </div>
                             <?php
                             $sqlTip = "SELECT * FROM tipo_producto";
                               $resul = $mysqli->query($sqlTip);
@@ -99,7 +104,7 @@ $sql = "SELECT * FROM producto ORDER BY idP";
                                 </li>
                               </ul>
                             <?php } ?>
-                          </div>
+
                           <!-- ==================== Fin lista categorias =============== -->
                         </ul>
                       </li>
@@ -164,14 +169,11 @@ $sql = "SELECT * FROM producto ORDER BY idP";
 
     <!-- /.container -->
 
-    <div class="container">
-
+    <div class="container-fluid">
         <hr>
-
         <!-- Footer -->
-
         <div class="container-fluid text-center">
-					<div id="contenedor">
+					<div id="footer">
 						<h4>Edutronika 2017</h4><br>
 						<p>Todos los derechos reservados.</p>
 									<div style="clear: both"></div>

@@ -1,10 +1,11 @@
 <?php
 require 'includes/conexion.php';
 session_start();
+
 $id = $_SESSION['idUsuario'];
 $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
   $resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
 
 ?>
 <!DOCTYPE html>
@@ -16,33 +17,18 @@ $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/ico" href="Image\edut.ico" />
+    <link rel="icon" type="image/ico" href="Image/edut.ico" />
     <title>Edutronika</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/shop-homepage.css" rel="stylesheet">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-      .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-      .jumbotron {
-          margin-bottom: 0;
-      }
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-      .tblanc {
-          color: #FFFFFF;
-      }
+    #footer{
+			height: 60px;
+			background: #040739;
+			color: #FDFDFD;
+		}
   </style>
 </head>
 
@@ -70,11 +56,9 @@ $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php
-
-
                         if(isset($_SESSION['u_usuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
-                                echo ' <li><a href="perfil.php">Perfil</a></li> ';
+                                echo ' <li><a href="perfil.php"><span class="glyphicon glyphicon-user">Perfil</a></li> ';
                         }
                             else{
                                 header("Location: index.php");
@@ -89,21 +73,18 @@ $sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
         <div class="container">
             <div class="row">
                 <?php
-
                 if($_SESSION['tipo_usr_idtipo_usr']==1){
                         echo '<H1> Hola ';
                         echo $_SESSION['nomUsr'];
                         echo ', Bienvenido Administrador </H1>';
-                        echo "<br><a href=\"AdminProductos.php\" class=\"btn btn-primary\">Modificar productos</a>";
-
                 }
                     else{
                         echo '<H1> Hola ';
                         echo $_SESSION['nomUsr'];
+												echo "<h5>Los cambios en el nombre del usuario se verá reflejado al iniciar sesión nuevamente<h5>";
                     }
                 ?>
             </div>
-
             <form class="form-horizontal" method="POST" action="actualizar_cliente.php" autocomplete="off">
                 <div class="form-group">
                     <label for="nombre" class="col-sm-2 control-label">Nombre</label>

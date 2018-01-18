@@ -5,13 +5,13 @@ session_start();
 if (@!$_SESSION['idUsuario']) {
 	header("Location:index.php");
 }elseif ($_SESSION['tipo_usr_idtipo_usr']==2) {
-	header("Location:sesion.php");
+	header("Location:perfil.php");
 }
 
 
 $sql = "SELECT * FROM producto ORDER BY idP";
   $resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -103,7 +103,7 @@ $sql = "SELECT * FROM producto ORDER BY idP";
     <!-- Page Content -->
     <div class="container">
       <div class="row">
-          
+
         <section>
             <div class="col-sm-10">
 			<input type="text" class="form-control" name="busqueda" id="busqueda" placeholder="Buscar...">

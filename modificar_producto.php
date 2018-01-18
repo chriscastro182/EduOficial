@@ -11,7 +11,7 @@ $id = $_GET['id'];
 	$sql = "SELECT * FROM producto WHERE idP = '$id'";
 
 	$resultado = $mysqli->query($sql);
-	$row = $resultado->fetch_array(MYSQLI_ASSOC);
+	$row = $resultado->fetch_assoc();
   $idTipP = $row['Tipo_Producto_idTipo_Producto'];
 ?>
     <html>
@@ -19,7 +19,7 @@ $id = $_GET['id'];
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-				<link rel="icon" type="image/ico" href="Image\edut.ico"/>
+				<link rel="icon" type="image/ico" href="Image/edut.ico"/>
         <title>Administracion</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,7 @@ $id = $_GET['id'];
             </div>
              </form>
             <form class="form-horizontal" method="POST" action="actualizar.php" enctype="multipart/form-data" autocomplete="off">
-
+										<input type="hidden" id="idP" name="idP" placeholder="idP" value="<?php echo $row['idP']; ?>" />
                 <div class="form-group">
                     <label for="nomPro" class="col-sm-2 control-label">Nombre del artículo: </label>
                     <div class="col-sm-10">
@@ -48,13 +48,15 @@ $id = $_GET['id'];
                     </div>
                 </div>
 
+
+
 								<div class="form-group">
-									<label for="img" class="col-sm-2 control-label">Subir archivo</label>
-									<div class="col-sm-10">
-                	<input type="file" id="img" name="img" placeholder="img" value="<?php echo $row['img'];?>" />
-                <input type="hidden" id="id" name="id" placeholder="id" value="<?php echo $row['idP']; ?>" />
-							</div>
-						</div>
+										<label for="img" class="col-sm-2 control-label">Subir archivo</label>
+											<div class="col-sm-10">
+												<input type="file" id="imag" name="imag"/>
+								        <input type="hidden" class="form-control" id="img" name="img" value="<?php echo $row['img'];?>"/>
+											</div>
+								</div>
 
                 <div class="form-group">
                     <label for="cst" class="col-sm-2 control-label">Costo: </label>
@@ -84,7 +86,7 @@ $id = $_GET['id'];
                     $tipo=$resu->fetch_assoc()
 
                     ?>
-                    <div class="form-group">
+											<div class="form-group">
                         <label for="stock" class="col-sm-2 control-label">Categorías: </label>
                         <div class="col-sm-10">
                             <select class="form-control" id="tipoProducto" name="tipoProducto">

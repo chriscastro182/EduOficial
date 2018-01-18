@@ -14,29 +14,11 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <style>
-            .navbar {
-          margin-bottom: 5px;
-          border-radius: 0;
-      }
-
-      .jumbotron {
-          margin-bottom: 0;
-      }
-
-      .center1 {
-          position: absolute;
-          left: 0;
-          top: 5%;
-          width: 100%;
-          text-align: center;
-          font-size: 16px;
-          z-index: 1;
-          color: #FFFFFF;
-      }
-
-      .tblanc {
-          color: #FFFFFF;
-      }
+    #footer{
+      height: 60px;
+      background: #040739;
+      color: #FDFDFD;
+    }
       html
       {
           position: relative;
@@ -72,13 +54,14 @@
                                 <li><a href="descar.php">Descargas</a></li>
                                 <li><a href="conta.php">Contacto</a></li>
                             </ul>
+                            <!--
                             <ul class="nav navbar-nav navbar-right">
                      <?php
 
                     if(session_start());{
                         if(isset($_SESSION['u_usuario'])){
                                 echo ' <li><a href="cerrar_sesion.php"><span class="glyphicon glyphicon-log-out"></span> Cerrar sesion</a></li>';
-                                echo ' <li><a href="perfil.php">Perfil</a></li> ';
+                                echo ' <li><a href="perfil.php"><span class="glyphicon glyphicon-user">Perfil</a></li> ';
                         }
                             else{
                                 echo ' <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>';
@@ -86,7 +69,7 @@
                             }
                     }
 
-                    ?>
+                    ?>-->
                     </ul>
                         </div>
             <!-- /.navbar-collapse -->
@@ -96,32 +79,30 @@
 
     <div class="row">
       <div class="col-sm-5">
-        <h1>Contáctanos </h1>
+        <h1>Contáctanos</h1>
           <div class="responsive">
-            <form method="post" action="enviar.php">
+            <form action="enviar.php" method="POST">
               <div class="form-group">
                 <label for="usr">Nombre Completo:</label>
-                <input type="text" class="form-control" placeholder="Escribe tu nombre" id="nom" maxlength="50"  autocomplete autofocus required>
+                <input type="text" class="form-control" placeholder="Escribe tu nombre" name="nom" maxlength="50"  autocomplete autofocus required>
               </div>
               <div class="form-group">
                 <label for="usr">Celular:</label>
-                <input type="text" class="form-control" placeholder="Teléfono" id="cel" maxlength="15" placeholder="Telefono" autocomplete autofocus required>
+                <input type="text" class="form-control" placeholder="Teléfono" name="cel" maxlength="10" placeholder="Telefono" autocomplete autofocus required>
               </div>
               <div class="form-group">
                 <label for="usr">Correo Electronico:</label>
-                <input type="text" class="form-control" placeholder="micorreo@correo.com" id="corr" maxlength="50"  autocomplete autofocus required>
+                <input type="text" class="form-control" placeholder="micorreo@correo.com" name="corr" maxlength="50"  autocomplete autofocus required>
               </div>
-              <br>
-              <br>
               <div class="form-group">
                 <label for="usr">Asunto:</label>
-                <input type="text" class="form-control" placeholder="Asunto del correo electrónico" id="asunto" maxlength="30"  autocomplete autofocus required>
+                <input type="text" class="form-control" placeholder="Asunto del correo electrónico" name="asunto" maxlength="30"  autocomplete autofocus required>
               </div>
                 <div class="form-group">
                   <label for="comment">Comentarios:</label>
-                  <textarea class="form-control" rows="5" id="comentarios"></textarea>
+                  <textarea class="form-control" rows="5" name="comentarios"></textarea>
                 </div>
-                <a href="enviar.php" class="btn btn-default">Enviar comentarios </a>
+                <input type="submit" name="botonlg" value="Enviar Comentarios">
             </form>
             <div class="well well-sm">
               <br>Email: edutronika@gmail.com<br>
@@ -146,19 +127,23 @@
 
       </div>
     </div>
-    <br>
-    <div class="container-fluid text-center">
-      <div id="contenedor">
-        <h4>Edutronika 2017</h4><br>
-        <p>Todos los derechos reservados.</p>
-              <div style="clear: both"></div>
-          </div>
+    <br><br><br>
+    <div class="container-fluid">
+        <hr>
+        <!-- Footer -->
+        <div class="container-fluid text-center">
           <div id="footer">
-            <p>Desarrollado por:
-              <br>
-              C&D Software</p>
+            <h4>Edutronika 2017</h4><br>
+            <p>Todos los derechos reservados.</p>
+                  <div style="clear: both"></div>
+              </div>
+              <div id="footer">
+                <p>Desarrollado por:
+                  <br>
+                  C&D Software</p>
+            </div>
         </div>
-    </div>
+  </div>
 
     </body>
     </html>

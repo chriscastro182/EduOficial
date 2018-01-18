@@ -41,9 +41,9 @@ require 'includes/conexion.php';
                         <li><a href="descar.php">Descargas</a></li>
                         <li><a href="conta.php">Contacto</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                  <!--  <ul class="nav navbar-nav navbar-right">
                         <li><a href="signUp.php"><span class="glyphicon glyphicon-user"></span> Regístrate</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 <!-- /.navbar-collapse -->
             </div>

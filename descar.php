@@ -13,7 +13,13 @@
   <link href="css/shop-homepage.css" rel="stylesheet">
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
+  <style>
+  #footer{
+    height: 60px;
+    background: #040739;
+    color: #FDFDFD;
+  }
+  </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -34,7 +40,7 @@
                   <li><a href="descar.php">Descargas</a></li>
                   <li><a href="conta.php">Contacto</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+              <!--  <ul class="nav navbar-nav navbar-right">
                      <?php
                     if(session_start());{
                         if(isset($_SESSION['u_usuario'])){
@@ -47,7 +53,7 @@
                             }
                     }
                     ?>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </nav>
@@ -68,7 +74,7 @@
                   </div>
                      <div class="col-sm-3">
                     <a href="descargas/ArduinoNANO.rar" download="ArduinoNANO.rar">
-                      <img border="0" src="fonts/dscrg2.ico" alt="drviersMP.rar" width="100%" height="100%">
+                      <img border="0" src="fonts/dscrg.png" alt="drviersMP.rar" width="100%" height="100%">
                         <h4>Controladores para el Arduino Nano en S.O. Windows</h4>
                         <p>(Genérico) x86</p>
                       </a>
@@ -81,7 +87,7 @@
                 <br><br><br><br><hr>
                 <!-- Footer -->
         				<div class="container-fluid text-center">
-        					<div id="contenedor">
+        					<div id="footer">
         						<h4>Edutronika 2017</h4><br>
         						<p>Todos los derechos reservados.</p>
         									<div style="clear: both"></div>
