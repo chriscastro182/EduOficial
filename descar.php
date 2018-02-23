@@ -90,24 +90,102 @@
     <header class="major">
       <h1>Descargas</h1>
     </header>
-  <h2>Drivers </h2>
-    <div class="row" style="text-align:center">
-      <div class="col-sm-3">
-        <a href="descargas/MasterPROG_Software.rar" download="driversMasterProg.rar">
-          <img border="0" src="fonts/dscrg.png" alt="drviersMP.rar" width="100%" height="100%">
-            <h4>Controladores para el MasterProg en S.O. Windows</h4>
-            <p>Arqutecturas x86 y x64</p>
-          </a>
+    <h2>Categorías</h2>
+    <p><strong>Nota:</strong> El siguiente material es proporcionado por parte de la empresa Edutronika con la finalidad de compartir el conocimiento. </p>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Drivers</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <div class="col-sm-4 col-md-4 col-lg-4" style="align:center;">
+              <a href="descargas/MasterPROG_Software.rar" download="driversMasterProg.rar">
+                <img border="0" src="fonts/dscrg.png" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="50%" >
+                  <h4>Controladores para el MasterProg en S.O. Windows</h4>
+                  <p>Arqutecturas x86 y x64</p>
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <a href="descargas/ArduinoNANO.rar" download="ArduinoNANO.rar">
+                <img border="0" src="fonts/dscrg2.ico" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="50%" >
+                  <h4>Controladores para el Arduino Nano en S.O. Windows</h4>
+                  <p>(Genérico) x86</p>
+                </a>
+            </div>
+          </div>
+        </div>
       </div>
-         <div class="col-sm-3">
-        <a href="descargas/ArduinoNANO.rar" download="ArduinoNANO.rar">
-          <img border="0" src="fonts/dscrg2.ico" alt="drviersMP.rar" width="100%" height="100%">
-            <h4>Controladores para el Arduino Nano en S.O. Windows</h4>
-            <p>(Genérico) x86</p>
-          </a>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Manuales y Fichas técnicas </a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="col-sm-4 col-md-4 col-lg-4" style="align:center;">
+              <a href="descargas/Manuales/MPASM Assembler Manual.pdf" download="ManualAssembler.pdf">
+                <img border="0" src="fonts/btn3dl.png" alt="manual assembler.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>Manual de Assembler</h4>
+                  <p>(Manuales)</p>
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <a href="descargas/Manuales/MPLAB IDE QUICK START GUIDE.pdf" download="MPLAB IDE QUICK START GUIDE.pdf">
+                <img border="0" src="fonts/btn3dl.png" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>MP LAB Guía rápida</h4>
+                  <p>(Manuales)</p>
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <a href="descargas/Manuales/MPLAB IDE.pdf" download="MPLAB IDE.pdf">
+                <img border="0" src="fonts/btn3dl.png" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>MPLAB IDE</h4>
+                  <p>(Manuales)</p>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Software</a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="col-sm-4 col-md-4 col-lg-4" style="align:center;">
+              <a href="descargas/Software/Proteus.rar" download="Proteus.rar">
+                <img border="0" src="fonts/btn4dl.png" alt="manual assembler.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>Proteus</h4>
+                  <p>(Instalador)</p>
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <a href="descargas/Software/MPLAB.rar" download="MPLAB.rar">
+                <img border="0" src="fonts/btn4dl.png" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>MP LAB </h4>
+                  <p>(Instalador)</p>
+                </a>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <a href="descargas/Software/PIC-Simulator.rar" download="PIC-Simulator.rar">
+                <img border="0" src="fonts/btn4dl.png" alt="drviersMP.rar" style="display: block;  margin-left: auto;  margin-right: auto;" width="60%" >
+                  <h4>PIC - Simulator</h4>
+                  <p>(Instalador)</p>
+                </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <!-- old content -->
+
 </div>
 <footer class="container-fluid text-center">
   <div class="tblanc">
